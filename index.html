@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Audio Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="overlay">
+    <header>
+      <h1>3D Audio Visualizer</h1>
+      <p>上传一首音乐，让波形在三维空间中起舞</p>
+    </header>
+
+    <div class="controls">
+      <label class="file-btn">
+        <input type="file" id="audioFile" accept="audio/*" hidden />
+        <span>选择音频文件</span>
+      </label>
+      <button id="playBtn" disabled>播放</button>
+      <button id="pauseBtn" disabled>暂停</button>
+      <span id="trackName" class="track-name">尚未选择文件</span>
+    </div>
+
+    <footer>
+      <span>Web Audio API · three.js</span>
+    </footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
